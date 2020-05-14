@@ -78,7 +78,6 @@ module.exports.updateProduct = async function(req,res){
         })
     }
     try{
-        //let product = await Product.findOneAndUpdate({_id:id},{$set:{quantity:quantity+number},new:true});
         let product = await Product.findById(id);//find the Id
         product.quantity = product.quantity+eval(number);//update the document
         product.save();//save the document
